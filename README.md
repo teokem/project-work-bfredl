@@ -1,7 +1,6 @@
 # Project Work for Reproducible and Interactive Data Science
 
-This is an empty repository for the project work
-of the course "Reproducible and Interactive Data Science".
+"Imputation of missing data using Variational Autoencoders" by Björn Linse
 
 ## Tasks
 
