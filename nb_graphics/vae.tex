@@ -1,0 +1,52 @@
+\documentclass[tikz,convert={outfile=\jobname.svg}]{standalone}
+\usepackage{tikz}
+\usepackage{amssymb}
+%\usepackage[active]{preview}
+%\def\measbox #1;{\useasboundingbox #1; \draw #1;}
+\def\measbox #1;{\useasboundingbox #1;}
+\begin{document}
+\begin{tikzpicture}
+    \measbox (0.5,-0.5) rectangle (12.5,4.5);
+    %\draw (0.5,-2.5) rectangle (12.5,4.5) ;
+
+    \def\as{1}
+    \def\ae{2}
+    \def\bs{3.5}
+    \def\be{4.5}
+    \def\cs{6}
+    \def\ce{7}
+    \def\ds{8.5}
+    \def\de{9.5}
+    \def\es{11}
+    \def\ee{12}
+    \draw (\as,0) rectangle (\ae,4);
+    \node[at={(1.5,2)}] {$x$};
+    \draw[->,thick] (\ae,2) -- (\bs,2);
+    \draw (\bs,0) rectangle (\be,4);
+    \node[at={(4.0,2)}] {$h$};
+    \draw[->,thick] (\be,2) -- (\cs,2);
+    \draw (\cs,1) rectangle (\ce,3);
+    \draw[->,thick] (\ce,2) -- (\ds,2);
+    \draw (\ds,0) rectangle (\de,4);
+    \draw[->,thick] (\de,2) -- (\es,2);
+    \draw (\es,0) rectangle (\ee,4);
+    %\draw (.3,4) rectangle (10.1,4.8);
+    \node[at={(6.5,2)}] {$z$};
+    \node[at={(9.0,2)}] {$h$};
+    \node[at={(11.5,2)}] {$x'$};
+    %\node[at={(10.5,4)},draw,rectangle] (py) {$p(y)$}; 
+
+
+    %\draw[thick] (\ce,-0.5) -- (\es,-0.5);
+    %\draw[thick] (\ae,-0.5) -- (\cs,-0.5);
+
+    \node (p) at (6.5,4) {$q(z) \thicksim N(0,\mathrm I)$};
+    \draw[->,thick] (p) -- (6.5,3);
+    \node at (10.15,2.3) {$p_{\theta}(x|z)$};
+    %\node[anchor=west] at (1,-1.4) {$\log p_\theta(x)=\log \int p_\theta(x|z)p(z)dz$};
+        \node at (5.15,2.3) {$q_{\psi}(z|x)$};
+    %\node[anchor=west] at (2.55,-2.0) {$> /\textrm{math}^{[1]}/ >  E_{q_{\psi}(z|x)}[\log p_\theta(x|z)]- D_{\mathrm{KL}}(q_{\psi}(z|x)||p(z))$};
+
+    \end{tikzpicture}
+
+\end{document}
